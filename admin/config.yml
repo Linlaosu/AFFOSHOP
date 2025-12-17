@@ -1,0 +1,20 @@
+backend:
+  name: git-gateway
+  branch: main # 之後上傳到 GitHub 的分支名稱，通常是 main 或 master
+
+media_folder: "images/uploads" # 後台過上傳的圖片會存在這裡
+public_folder: "images/uploads" # 網頁讀取圖片的路徑
+
+collections:
+  - name: "products" # 資料集合名稱
+    label: "商品管理" # 後台顯示的名稱
+    folder: "products" # 商品資料存檔的資料夾
+    create: true # 允許新增商品
+    slug: "{{slug}}" # 檔名規則
+    fields: # 商品的欄位設定
+      - {label: "商品名稱", name: "title", widget: "string"}
+      - {label: "商品圖片", name: "image", widget: "image"}
+      - {label: "品牌", name: "brand", widget: "select", options: ["DISCOVERY EXPEDITION", "KODAK APPAREL", "Other"]}
+      - {label: "價格", name: "price", widget: "number"}
+      - {label: "標籤", name: "tag", widget: "string", required: false}
+      - {label: "商品描述", name: "body", widget: "markdown", required: false}

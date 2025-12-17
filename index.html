@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>Korea Select｜韓國專櫃服飾代購</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="主打韓國專櫃品牌 DISCOVERY、KODAK 等機能服飾代購，韓國直送、保證正品。">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+  <!-- 頂部公告列 -->
+  <div class="top-bar">
+    <span>🇰🇷 韓國直送・專櫃正品保證・滿 2 件免運</span>
+  </div>
+
+  <!-- 導覽列 -->
+  <header class="header">
+    <div class="logo">Korea Select</div>
+    <nav class="nav">
+      <a href="#new">本週新品</a>
+      <a href="#discovery">DISCOVERY</a>
+      <a href="#kodak">KODAK</a>
+      <a href="#about">關於代購</a>
+    </nav>
+    <button class="cart-btn" id="openCartBtn">
+      🛒 <span id="cartCount">0</span>
+    </button>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>韓國專櫃代購｜DISCOVERY・KODAK</h1>
+      <p>嚴選韓國百貨專櫃款，主打機能外套、都市戶外穿搭，少量現貨＋預購批次出貨。</p>
+      <a href="#new" class="btn-primary">先逛本週新品</a>
+    </div>
+    <div class="hero-image">
+      <!-- 之後換成實際模特穿搭圖 -->
+      <div class="hero-placeholder">Banner 圖區</div>
+    </div>
+  </section>
+
+  <!-- 分類捷徑 -->
+  <section class="category-shortcut">
+    <a href="#new" class="category-card">
+      <span>NEW IN</span>
+      <small>本週新品</small>
+    </a>
+    <a href="#discovery" class="category-card">
+      <span>DISCOVERY</span>
+      <small>機能外套 / 防風</small>
+    </a>
+    <a href="#kodak" class="category-card">
+      <span>KODAK</span>
+      <small>Logo 衛衣 / TEE</small>
+    </a>
+  </section>
+
+  <!-- 商品區：本週新品 -->
+  <section class="product-section" id="new">
+    <div class="section-header">
+      <h2>本週新品</h2>
+      <p>每週從韓國專櫃更新，皆為正品代購，下單後約 10–14 天到貨。</p>
+    </div>
+    <div class="product-grid">
+      <!-- 商品卡片範例 1 -->
+      <article class="product-card" data-id="p1" data-name="DISCOVERY 防風連帽外套" data-price="3980">
+        <div class="product-img placeholder">商品圖片</div>
+        <h3>DISCOVERY 防風連帽外套</h3>
+        <p class="product-brand">DISCOVERY EXPEDITION</p>
+        <p class="product-price">NT$ 3,980</p>
+        <p class="product-tag">熱賣｜韓國百貨專櫃款</p>
+        <button class="btn-outline add-to-cart">加入購物車</button>
+      </article>
+
+      <!-- 商品卡片範例 2 -->
+      <article class="product-card" data-id="p2" data-name="KODAK LOGO 厚棉衛衣" data-price="2580">
+        <div class="product-img placeholder">商品圖片</div>
+        <h3>KODAK LOGO 厚棉衛衣</h3>
+        <p class="product-brand">KODAK APPAREL</p>
+        <p class="product-price">NT$ 2,580</p>
+        <p class="product-tag">人氣款｜百搭休閒</p>
+        <button class="btn-outline add-to-cart">加入購物車</button>
+      </article>
+
+      <!-- 商品卡片範例 3 -->
+      <article class="product-card" data-id="p3" data-name="DISCOVERY 機能輕量羽絨" data-price="4680">
+        <div class="product-img placeholder">商品圖片</div>
+        <h3>DISCOVERY 機能輕量羽絨</h3>
+        <p class="product-brand">DISCOVERY EXPEDITION</p>
+        <p class="product-price">NT$ 4,680</p>
+        <p class="product-tag">保暖｜輕量好收納</p>
+        <button class="btn-outline add-to-cart">加入購物車</button>
+      </article>
+
+      <!-- 商品卡片範例 4 -->
+      <article class="product-card" data-id="p4" data-name="KODAK 復古 LOGO 短TEE" data-price="1680">
+        <div class="product-img placeholder">商品圖片</div>
+        <h3>KODAK 復古 LOGO 短TEE</h3>
+        <p class="product-brand">KODAK APPAREL</p>
+        <p class="product-price">NT$ 1,680</p>
+        <p class="product-tag">預購｜多色可選</p>
+        <button class="btn-outline add-to-cart">加入購物車</button>
+      </article>
+    </div>
+  </section>
+
+  <!-- 簡單品牌區塊：DISCOVERY / KODAK -->
+  <section class="brand-section" id="discovery">
+    <h2>DISCOVERY EXPEDITION</h2>
+    <p>韓國熱門機能戶外品牌，主打防風、防潑水與都市 Outdoor 風格，適合通勤與旅行穿搭。</p>
+  </section>
+
+  <section class="brand-section" id="kodak">
+    <h2>KODAK APPAREL</h2>
+    <p>以復古底片品牌為靈感，延伸出街頭感 Logo 系列單品，衛衣、帽T、TEE 為熱門入手款。</p>
+  </section>
+
+  <!-- 關於代購說明 -->
+  <section class="about-section" id="about">
+    <h2>關於韓國專櫃代購</h2>
+    <ul>
+      <li>來源說明：全數為韓國百貨公司 / 官方門市購買，保證正品。</li>
+      <li>出貨方式：部分現貨 2–3 天內寄出，預購約 10–14 天（不含假日）。</li>
+      <li>尺寸建議：下單前可私訊 IG / LINE 提供身高體重，協助抓尺寸。</li>
+      <li>金流方式：目前採匯款 / 轉帳，下單後會提供專屬帳戶（未來可再串接台灣金流）。</li>
+    </ul>
+  </section>
+
+  <!-- 購物車側邊欄 -->
+  <aside class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <h3>購物車</h3>
+      <button id="closeCartBtn">✕</button>
+    </div>
+    <div class="cart-body">
+      <ul id="cartItems"></ul>
+      <div class="cart-summary">
+        <p>小計：<span id="cartTotal">NT$ 0</span></p>
+        <small>此為示意頁，實際付款流程可與台灣金流廠商合作串接。</small>
+      </div>
+      <button class="btn-primary" id="checkoutBtn">前往下單（示意）</button>
+    </div>
+  </aside>
+
+  <!-- 遮罩 -->
+  <div class="backdrop" id="backdrop"></div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Korea Select 韓系專櫃代購｜本網站僅示意，實際金流與條款以正式合作為主。</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
