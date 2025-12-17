@@ -1,7 +1,7 @@
 backend:
   name: git-gateway
-  branch: main
   repo: HugoL/AFFOSHOP
+  branch: main
 
 
 media_folder: "images/uploads" # 後台過上傳的圖片會存在這裡
