@@ -57,53 +57,20 @@
     </a>
   </section>
 
-  <!-- 商品區：本週新品 -->
-  <section class="product-section" id="new">
-    <div class="section-header">
-      <h2>本週新品</h2>
-      <p>每週從韓國專櫃更新，皆為正品代購，下單後約 10–14 天到貨。</p>
-    </div>
-    <div class="product-grid">
-      <!-- 商品卡片範例 1 -->
-      <article class="product-card" data-id="p1" data-name="DISCOVERY 防風連帽外套" data-price="3980">
-        <div class="product-img placeholder">商品圖片</div>
-        <h3>DISCOVERY 防風連帽外套</h3>
-        <p class="product-brand">DISCOVERY EXPEDITION</p>
-        <p class="product-price">NT$ 3,980</p>
-        <p class="product-tag">熱賣｜韓國百貨專櫃款</p>
-        <button class="btn-outline add-to-cart">加入購物車</button>
-      </article>
+<!-- 商品區：本週新品 -->
+<section class="product-section" id="new">
+  <div class="section-header">
+    <h2>本週新品</h2>
+    <p>每週從韓國專櫃更新，皆為正品代購，下單後約 10–14 天到貨。</p>
+  </div>
+  
+  <!-- 只要這一層就好，加上 id 讓 JS 抓得到 -->
+  <div class="product-grid" id="productGrid">
+    <p style="grid-column: 1/-1; text-align:center; color:#888;">正在載入最新商品...</p>
+  </div>
+</section>
 
-      <!-- 商品卡片範例 2 -->
-      <article class="product-card" data-id="p2" data-name="KODAK LOGO 厚棉衛衣" data-price="2580">
-        <div class="product-img placeholder">商品圖片</div>
-        <h3>KODAK LOGO 厚棉衛衣</h3>
-        <p class="product-brand">KODAK APPAREL</p>
-        <p class="product-price">NT$ 2,580</p>
-        <p class="product-tag">人氣款｜百搭休閒</p>
-        <button class="btn-outline add-to-cart">加入購物車</button>
-      </article>
 
-      <!-- 商品卡片範例 3 -->
-      <article class="product-card" data-id="p3" data-name="DISCOVERY 機能輕量羽絨" data-price="4680">
-        <div class="product-img placeholder">商品圖片</div>
-        <h3>DISCOVERY 機能輕量羽絨</h3>
-        <p class="product-brand">DISCOVERY EXPEDITION</p>
-        <p class="product-price">NT$ 4,680</p>
-        <p class="product-tag">保暖｜輕量好收納</p>
-        <button class="btn-outline add-to-cart">加入購物車</button>
-      </article>
-
-      <!-- 商品卡片範例 4 -->
-      <article class="product-card" data-id="p4" data-name="KODAK 復古 LOGO 短TEE" data-price="1680">
-        <div class="product-img placeholder">商品圖片</div>
-        <h3>KODAK 復古 LOGO 短TEE</h3>
-        <p class="product-brand">KODAK APPAREL</p>
-        <p class="product-price">NT$ 1,680</p>
-        <p class="product-tag">預購｜多色可選</p>
-        <button class="btn-outline add-to-cart">加入購物車</button>
-      </article>
-    </div>
   </section>
 
   <!-- 簡單品牌區塊：DISCOVERY / KODAK -->
