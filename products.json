@@ -1,18 +1,19 @@
 [
   {
     "id": "p001",
-    "name": "DISCOVERY 防風外套",
+    "name": "測試商品一號",
     "price": 3980,
-    "image": "images/uploads/coat110eb0634901c6c5636e1d3afbde799c.jpg",
+    "image": "images/uploads/110eb0634901c6c5636e1d3afbde799c.jpg",
     "brand": "DISCOVERY EXPEDITION",
-    "tag": "熱賣"
+    "tag": "新品"
   },
   {
     "id": "p002",
-    "name": "KODAK LOGO 衛衣",
+    "name": "測試商品二號",
     "price": 2580,
     "image": "images/uploads/1480cdd3-df28-4928-b69a-11a6db446580.jpg",
     "brand": "KODAK APPAREL",
-    "tag": "新品"
+    "tag": "熱賣"
   }
 ]
+

@@ -8,11 +8,11 @@ const cartItemsEl = document.getElementById("cartItems");
 const cartCountEl = document.getElementById("cartCount");
 const cartTotalEl = document.getElementById("cartTotal");
 const checkoutBtn = document.getElementById("checkoutBtn");
-const productGrid = document.getElementById("productGrid"); // 抓取商品列表容器
+const productGrid = document.getElementById("productGrid");
 
 let cart = [];
 
-// --- 購物車開關邏輯 ---
+// --- 購物車開關 ---
 function openCart() {
   cartPanel.classList.add("open");
   backdrop.classList.add("show");
@@ -27,12 +27,12 @@ openCartBtn.addEventListener("click", openCart);
 closeCartBtn.addEventListener("click", closeCart);
 backdrop.addEventListener("click", closeCart);
 
-// --- 金額格式化 ---
+// --- 格式化金額 ---
 function formatCurrency(amount) {
-  return "NT$ " + amount.toLocaleString("zh-TW");
+  return "NT$ " + Number(amount).toLocaleString("zh-TW");
 }
 
-// --- 渲染購物車內容 ---
+// --- 渲染購物車 ---
 function renderCart() {
   cartItemsEl.innerHTML = "";
   let total = 0;
@@ -43,10 +43,10 @@ function renderCart() {
     li.className = "cart-item";
     li.innerHTML = `
       <div>
-        <div>${item.name}</div>
-        <small>NT$ ${item.price.toLocaleString("zh-TW")} × ${item.qty}</small>
+        <div style="font-weight:bold;">${item.name}</div>
+        <small style="color:#666;">NT$ ${item.price.toLocaleString("zh-TW")} × ${item.qty}</small>
       </div>
-      <button data-index="${index}" class="remove-btn">刪除</button>
+      <button data-index="${index}" class="remove-btn" style="border:none; background:none; color:#999; cursor:pointer;">✕</button>
     `;
     cartItemsEl.appendChild(li);
   });
@@ -55,7 +55,7 @@ function renderCart() {
   cartCountEl.textContent = cart.reduce((sum, i) => sum + i.qty, 0);
 }
 
-// --- 加入購物車邏輯 (改為通用函式) ---
+// --- 加入購物車 (通用函式) ---
 function addToCart(id, name, price) {
   const existing = cart.find((item) => item.id === id);
   if (existing) {
@@ -67,32 +67,24 @@ function addToCart(id, name, price) {
   openCart();
 }
 
-// --- 讀取並顯示商品 (核心新功能) ---
+// --- 讀取並顯示商品 (核心功能) ---
 async function loadProducts() {
-  // 如果找不到容器就不執行，避免錯誤
   if (!productGrid) return;
 
   try {
-    // 讀取 products.json 檔案
     const response = await fetch('products.json');
-    if (!response.ok) throw new Error("找不到 products.json");
-    
+    if (!response.ok) throw new Error("找不到商品目錄檔");
+
     const products = await response.json();
-    
-    productGrid.innerHTML = ''; // 清空原本的載入中文字
+    productGrid.innerHTML = ''; // 清空載入中文字
 
     products.forEach(product => {
-      // 建立商品卡片 HTML
       const card = document.createElement('article');
       card.className = 'product-card';
-      // 雖然資料在 JS 裡，但為了保險還是寫入 dataset
-      card.dataset.id = product.id; 
-      card.dataset.name = product.name;
-      card.dataset.price = product.price;
-
+      
       card.innerHTML = `
         <div class="product-img">
-          <img src="${product.image}" alt="${product.name}" style="width:100%; height:100%; object-fit:cover; border-radius:12px;">
+          <img src="${product.image}" alt="${product.name}" onerror="this.src='https://placehold.co/400x400?text=No+Image'">
         </div>
         <h3>${product.name}</h3>
         <p class="product-brand">${product.brand}</p>
@@ -101,7 +93,7 @@ async function loadProducts() {
         <button class="btn-outline add-to-cart-btn">加入購物車</button>
       `;
 
-      // 直接幫這顆按鈕綁定事件 (這樣就不怕動態生成抓不到了)
+      // 綁定按鈕事件
       const btn = card.querySelector('.add-to-cart-btn');
       btn.addEventListener('click', () => {
         addToCart(product.id, product.name, Number(product.price));
@@ -111,12 +103,12 @@ async function loadProducts() {
     });
 
   } catch (error) {
-    console.error('無法讀取商品資料:', error);
-    productGrid.innerHTML = '<p style="grid-column: 1/-1; text-align:center;">目前無法載入商品，請稍後再試。</p>';
+    console.error(error);
+    productGrid.innerHTML = '<p style="grid-column:1/-1; text-align:center;">目前無商品資料</p>';
   }
 }
 
-// --- 購物車內刪除按鈕監聽 ---
+// --- 刪除購物車項目 ---
 cartItemsEl.addEventListener("click", (e) => {
   if (e.target.classList.contains("remove-btn")) {
     const index = Number(e.target.dataset.index);
@@ -126,8 +118,8 @@ cartItemsEl.addEventListener("click", (e) => {
 });
 
 checkoutBtn.addEventListener("click", () => {
-  alert("目前為示意頁，實際結帳流程可與台灣金流廠商（如綠界、藍新等）合作後再導入。");
+  alert("這是範例網站，尚未串接金流。");
 });
 
-// --- 網頁載入後，開始抓商品資料 ---
+// --- 啟動 ---
 window.addEventListener('DOMContentLoaded', loadProducts);
