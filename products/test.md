@@ -1,6 +1,6 @@
 ---
 title: TEST
-image: images/uploads/s__337272848_0.jpg
+image: images/uploads/s__337272850_0.jpg
 brand: DISCOVERY EXPEDITION
 price: 8888
 ---
